@@ -1,0 +1,56 @@
+
+9. AIM
+Write a Program to Display the items in a list(ListView)
+
+PROGRAM
+
+strings.xml
+
+<resources>
+    <string name="app_name">List View</string>
+         <string-array name="arr">
+            <item>Apple</item>
+            <item>Orange</item>
+            <item>Pineapple</item>
+            <item>Guva</item>
+        </string-array>
+</resources>
+
+
+activity_main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+        
+<ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+         android:entries="@array/arr"
+        android:layout_marginLeft="25dp"
+        android:layout_marginVertical="50dp"
+        />
+</RelativeLayout>
+
+
+MainActivity.java
+
+package com.example.p9;
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+
+public class MainActivity extends AppCompatActivity 
+{
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) 
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+}
+
+
+
+OUTPUT
