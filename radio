@@ -1,0 +1,88 @@
+
+5. AIM
+Write a Program to select gender using radio button
+
+PROGRAM
+
+strings.xml
+
+<resources>
+    <string name="app_name">Radion Button</string>
+    <string name="l1">Male</string>
+    <string name="l2">Female</string>
+</resources>
+
+activity_main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+<RadioGroup
+  	  android:layout_width="match_parent"
+    	  android:layout_height="wrap_content">
+
+   <RadioButton
+        android:id="@+id/rb1"
+        android:text="@string/l1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginVertical="25dp"
+        />
+
+    <RadioButton
+        android:id="@+id/rb2"
+        android:text="@string/l2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginVertical="27dp"
+        />
+
+</RadioGroup>
+
+</RelativeLayout>
+
+MainActivity.java
+
+package com.example.p5;
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.RadioButton;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener
+{
+RadioButton rb1,rb2;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        rb1 = (RadioButton) findViewById(R.id.rb1);
+        rb2 = (RadioButton) findViewById(R.id.rb2);
+        rb1.setOnClickListener(this);
+        rb2.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v)
+    {
+        String s;
+
+        if(v.getId()==R.id.rb1)
+        {
+            s=rb1.getText().toString();
+            Toast.makeText(this,s,Toast.LENGTH_SHORT).show();
+        }
+       else if(v.getId()==R.id.rb2)
+        {
+            s=rb2.getText().toString();
+            Toast.makeText(this,s,Toast.LENGTH_SHORT).show();
+        }
+    }
+}

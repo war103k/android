@@ -1,0 +1,58 @@
+
+6.AIM
+Write a Program to Spin the four items in a Spinner
+
+PROGRAM
+
+strings.xml
+
+<resources>
+    <string name="app_name">Spinner</string>
+    <string name="l1">Fruits</string>
+    <string-array name="arr">
+        <item>Apple</item>
+        <item>Orange</item>
+        <item>Pineapple</item>
+        <item>Guva</item>
+    </string-array>
+</resources>
+
+
+activity_main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/l1"
+        android:layout_marginLeft="30dp"
+        android:layout_marginVertical="50dp"
+        />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/arr"
+        android:layout_marginLeft="25dp"
+        android:layout_marginVertical="80dp"
+        />
+</RelativeLayout>
+
+MainActivity.java
+
+package com.example.p6;
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+
+public class MainActivity extends AppCompatActivity 
+{
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) 
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+}
